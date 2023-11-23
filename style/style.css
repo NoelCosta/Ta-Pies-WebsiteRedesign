@@ -951,6 +951,7 @@ main #main_landingPage{
 
     #menu_sidebar_outer{
         position: fixed;
+		z-index: 1;
         width: auto;
         top: 81px;
         left:0%;        
