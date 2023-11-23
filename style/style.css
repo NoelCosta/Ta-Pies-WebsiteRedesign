@@ -1,0 +1,1595 @@
+:root {
+    --ta-pies_red: #E33831; /* color: var(--ta-pies_red) */
+    --bs-light-bg: #f8f9fa; /* Bootstrap light bg */
+}
+
+*{
+    /* Transform in gallery was leaving trails on chromium based browsers */
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+/* Imported Fonts */
+@font-face {
+    font-family: Futura-Pt_Light;
+    src: url(../assets/fonts/Futura-PT/FuturaPTLight.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Demi;
+    src: url(../assets/fonts/Futura-PT/FuturaPTDemi.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Book;
+    src: url(../assets/fonts/Futura-PT/FuturaPTBook.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Medium;
+    src: url(../assets/fonts/Futura-PT/FuturaPTMedium.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Medium_Oblique;
+    src: url(../assets/fonts/Futura-PT/FuturaPTCondMediumOblique.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Heavy;
+    src: url(../assets/fonts/Futura-PT/FuturaPTHeavy.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Bold;
+    src: url(../assets/fonts/Futura-PT/FuturaPTBold.otf);
+}
+
+@font-face {
+    font-family: Futura-Pt_Cond_Bold;
+    src: url(../assets/fonts/Futura-PT/FuturaPTCondBold.otf);
+}
+
+/***** Common *****/
+/* Remove Margins */
+html{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Main Margins */
+main{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* Extra space due to navbar */
+.main_extra_space{
+    height: 81px;
+}
+
+/* Extra Space between Sections */
+.sections_extra_space{
+    height: 100px;
+}
+
+/* Headings */
+.heading_1{
+    font-size: 130px;
+    font-family: Futura-Pt_Medium;
+    text-align: center;
+
+    margin:0;
+    padding:0;
+    margin-top:67px;
+    margin-bottom:67px;
+
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.heading_2{
+    font-family: Futura-Pt_Medium;
+    font-size: 80px;
+
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    color: var(--ta-pies_red);
+}
+
+.heading_3{
+    font-family: Futura-Pt_Medium;
+    font-size: 30px;
+}
+
+.text_default{
+    font-family: Futura-PT_Book ;
+    font-size: 25px;
+}
+
+/* Heading Responsiveness */
+@media screen and (max-width: 550px) {
+    .heading_1{
+        font-size: 5.5rem;
+    }
+}
+
+/* Dropshadows */
+.dropShadow_default{
+    -moz-box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+    -webkit-box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+    box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+}
+
+.dropShadow_text_default{
+    text-shadow: 0px 3px 6px rgba(0,0,0,0.70);
+}
+
+/* Buttons */
+.button_common{
+    padding: 13px 27px !important;
+
+    cursor: pointer;
+    background-color: var(--ta-pies_red);
+    color: white !important;
+    
+    font-size: 30px;
+    font-family: Futura-Pt_Book !important;
+    text-decoration: none !important;
+
+    border: 0;
+}
+.button_common:hover{
+    background-color: #DA1E24;
+}
+
+/* Navbar */
+.navbar{
+    background-color: black;
+    font-size: 16px;
+    border-bottom: 5px solid var(--ta-pies_red);
+
+    margin-left:0;
+    margin-right:0;
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.navbar .nav-item .nav-link{
+    font-family: Futura-Pt_Bold;
+    color: white;
+}
+
+.navbar .navbar_active{
+    color: var(--ta-pies_red) !important;
+    font-family: Futura-Pt_Heavy !important;
+}
+
+.navbar .logo{
+    height: 50px;
+    padding: 0%;
+    margin: 0%;
+    float: left;
+}
+
+.navbar .navbar-brand div{
+    padding-left: 10px;
+    float: left;
+    position:relative;
+    top: 3px;
+    font-size: 30px;
+}
+
+/* Footer */
+footer{
+    margin-top: 100px;
+    background-color: black;
+
+    font-family: Futura-Pt_Book;
+    color: white;
+    font: 16px;
+
+    border-top: 5px solid var(--ta-pies_red);
+}
+
+#footer_inner{
+    display: grid;
+    height: auto;
+
+    background-color: black;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "logo_icons"
+        "details"
+        "copyright"
+        ;
+
+    width: 727px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer - Top */
+#footer_top{
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    display: grid;
+    grid-area: logo_icons;
+
+    justify-content: center;
+    align-content: center;
+
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "logo icons"
+        ;
+}
+/* Footer - Top - Logo */
+#footer_logo{
+    grid-area: logo;
+}
+#footer_logo a img{
+    float: left;
+    max-height: 41px;
+}
+#footer_logo a{
+    color: #FFFFFF;
+    text-decoration: none!important;
+    font-family: Futura-Pt_heavy;
+    font-size: 30px;
+}
+#footer_logo a p{
+    float: left;
+    padding-left: 10px;
+}
+#footer_icons{
+    grid-area: icons;
+    margin-left: auto;
+    margin-right: 0;
+}
+/* Footer - Top - Icons */
+#footer_icons div{
+    float: left;
+}
+#footer_icons div a img{
+    grid-area: icons;
+    max-height: 34px;
+    margin-left: 20px;;
+
+    transform: translateY(27%);
+    height: 65%;
+}
+
+/* Footer - Details */
+#footer_details{
+    padding-bottom: 30px;
+
+    display: grid;
+    grid-area: details;
+
+    column-gap: 30px;
+
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "opening_hours border1 address border2 telephone_email"
+        ;
+}
+
+/* Footer - Details - Typography */
+.footer_subtitle{
+    font-family: Futura-Pt_heavy;
+    font-size: 20px;
+    color: var(--ta-pies_red);
+
+    margin-bottom: 8px;
+}
+.footer_text{
+    font-family: Futura-Pt_book;
+    font-size: 20px;
+    color: white;
+
+    padding: 0;
+    margin: 0;
+}
+.footer_date{
+    font-family: Futura-Pt_Medium!important;
+}
+
+/* Footer - Details */
+#footer_details_address{
+    grid-area: address;
+}
+#footer_details_telephone_email{
+    grid-area: telephone_email;
+}
+#footer_details_parent{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer - Details - Opening Hours */
+#footer_details_opening-hours{
+    font-family: Futura-Pt_book;
+    font-size: 20px;
+    color: white;
+    
+    display: grid;
+    grid-area: opening_hours;
+
+    column-gap: 30px;
+
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "subtitle subtitle"
+        "day_1 time_1"
+        "day_2 time_2"
+        "day_3 time_3"
+        "day_4 time_4"
+        ;
+}
+#footer_details_opening-hours #footer_opening_hours{
+    grid-area: subtitle;
+}
+#footer_details_opening-hours #day_1{
+    grid-area: day_1;
+}
+#footer_details_opening-hours #time_1{
+    grid-area: time_1;
+}
+#footer_details_opening-hours #day_2{
+    grid-area: day_2;
+}
+#footer_details_opening-hours #time_2{
+    grid-area: time_2;
+}
+#footer_details_opening-hours #day_3{
+    grid-area: day_3;
+}
+#footer_details_opening-hours #time_3{
+    grid-area: time_3;
+}
+#footer_details_opening-hours #day_4{
+    grid-area: day_4;
+}
+#footer_details_opening-hours #time_4{
+    grid-area: time_4;
+}
+
+/* Footer - Copyright */
+#footer_copyright{
+    padding-bottom: 30px;
+
+    grid-area: copyright;
+
+    text-align: center;
+}
+
+/* Footer - Dividers / Borders */
+#footer_border_1{
+    grid-area: border1;
+}
+
+#footer_border_2{
+    grid-area: border2;
+}
+
+.footer_border{
+    width: 2px;
+    background-color: var(--ta-pies_red);
+}
+
+/* Footer Responsiveness */
+@media screen and (max-width: 850px) {
+    #footer_details{    
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            "opening_hours"
+            "border1"
+            "address"
+            "border2"
+            "telephone_email"
+            ;
+    }
+
+    #footer_inner{
+        width: auto;
+    }
+
+    .footer_border{
+        width: auto;
+        height: 2px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: var(--ta-pies_red);
+    }
+
+    #footer_inner{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #footer_details_parent{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #footer_top{    
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "logo"
+            "icons"
+            ;
+    }
+    #footer_logo{
+        display: block; margin: 0 auto;
+    }
+    #footer_icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #footer_details_opening-hours{    
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "subtitle"
+            "day_1"
+            "time_1"
+            "day_2"
+            "time_2"
+            "day_3"
+            "time_3"
+            "day_4"
+            "time_4"
+            ;
+    }
+
+    .footer_time{
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    #time_4{
+        margin-bottom: 0;
+    }
+}
+
+/***** Landing Page *****/
+#landingPage_bg{
+    background-image: url(../assets/images/landingPage/bg_lpG.png) ;
+
+    background-attachment: fixed;
+
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+/* Heading Font */
+#landPage_heading{
+    padding-top: 78px;
+    font-family: Futura-Pt_Medium;
+    color: white;
+    font-size: 150px;
+}
+/* Subheading Font (Hugh Jackman) */
+#landPage_subheading {
+    color: var(--ta-pies_red);
+    font-family: Futura-Pt_Demi !important;
+    font-size: 40px;
+    padding-bottom: 43px;
+}
+
+/*Landing Page Subtext Orange*/
+.landingPage_subtext{
+    font-family: Futura-Pt_Demi;
+    font-size: 20px;
+    color: var(--ta-pies_red);
+    text-align: center;
+}
+/* Our Menu Button */
+#landingPage_button{
+    float: left;
+}
+/* Landing Page Social Icons */
+.landingPage_icon img{
+    transform: translateY(27%);
+    height: 65%;
+}
+
+/* Landing Page Social Icons */
+.lp_icon{
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    margin-left: 20px;
+    padding-top: 12px;
+}
+
+/* Landing Page Grid */
+
+main #main_landingPage{
+    height: 100vh;
+    min-height: 1100px;
+    position: relative;
+}
+
+#landingPage_grid{
+    margin-top: 100px;
+    
+    color: white;
+    font-size: 30px;
+    font-family: Futura-PT_Book ;
+    text-align: center;
+    
+    display: grid;
+
+    column-gap: 30px;
+
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "time location telephone "
+        ;
+
+    /* Stay at bottom 0, with main 100vh height, min height, and position relative */
+    width: 100%;
+    max-width: 1500px;
+    bottom: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+#landingPage_grid #lp_time{
+    grid-area: time;
+}
+#landingPage_grid #lp_locations{
+    grid-area: location;
+}
+#landingPage_grid #lp_telephone{
+    grid-area: telephone;
+}
+
+
+/* Landing Page - Mobile Responsiveness - Hrading / Subheading */
+@media screen and (max-width: 1470px) {
+    #landPage_heading{
+        font-size: 120px;
+    }
+    #landPage_subheading {
+        font-size: 35px;
+    }
+}
+@media screen and (max-width: 1035px) {
+    #landPage_heading{
+        font-size: 100px;
+    }
+    #landPage_subheading {
+        font-size: 30px;
+    }
+
+    main #landingPage_grid{
+        position: relative;
+        padding-top: 30px;
+    }
+}
+@media screen and (max-width: 886px) {
+    #landPage_heading{
+        font-size: 70px;
+    }
+    #landPage_subheading {
+        font-size: 25px;
+    }
+}
+
+/* Landing Page - Mobile Responsiveness - Button & Icons */
+@media screen and (max-width: 1030px) {
+    #landingPage_buttons_icons_parent{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "button"
+            "icons"
+            ;
+    }
+
+    #landingPage_button_parent{
+        text-align: center;
+
+        grid-area: button;
+        float: none!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}
+    
+@media screen and (max-width: 1030px) {
+    #landingPage_buttons_icons_parent{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "button"
+            "icons"
+            ;
+    }
+
+    #landingPage_button_parent{
+        text-align: center;
+
+        grid-area: button;
+        float: none!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+
+    #landingPage_buttons_icons_parent #lp_icons{
+        grid-area: icons;
+        float: none!important;
+
+        margin-left: auto!important;
+        margin-right: auto!important;
+
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 30px;
+    }
+
+    .lp_icon{
+        padding-left: 0!important;
+        margin-left: 0!important;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+}
+/* Landing Page - Mobile Responsiveness - Icons */
+@media screen and (max-width: 500px) {
+    .lp_icon img{
+        width: 37px;
+    }
+
+}
+
+/* Landing Page - Mobile Responsiveness - Bottom */
+@media screen and (max-width: 1030px) {
+    #landingPage_grid{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "time"
+            "location"
+            "telephone"
+            ;
+    }
+
+    #lp_locations{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #lp_telephone{
+        margin-bottom: 30px;
+    }
+}
+
+/***** Gallery *****/
+/* Picture */
+.pic{
+    width:100%;
+    border-radius: 5px;
+
+}
+
+.pic_area{
+    transition: all .15s ease-out;
+    margin-bottom: 30px;
+}
+
+.pic_area:hover{
+    transition: all .2s ease;
+    z-index: 5;
+    transform: scale(1.3);
+}
+
+/* Captions */
+.img_caption{
+    line-height: 25pt;
+    text-align: right;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Futura-Pt_Book;
+    margin-top: -45px;
+    width: auto;
+    float: right;
+
+    /* For some reasy firefox would only display the captopns with this, not even z-index; */
+    transform: rotate(360deg); 
+}
+
+/* Gallery Grid */
+.gallery_row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* Create four equal columns that sits next to each other */
+.gallery_column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+
+    padding: 15px;
+}
+
+.gallery_column .pic_area {
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1300px) {
+    .gallery_column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 850px) {
+    .gallery_column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+/***** Menu Page *****/
+#menu_outer{
+    display: grid;
+    height: auto;
+
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sidebar menu_content empty" 
+        ;
+}
+
+/* Menu Sidebar */
+#menu_sidebar_outer{
+    grid-area: sidebar;
+
+    position: relative;
+}
+#menu_sidebar{
+    grid-area: sidebar;
+
+    position: sticky;
+    -webkit-position: sticky;
+    
+    top:100px;
+}
+
+#menu_sidebar p{
+    padding: 0;
+    margin: 0;
+
+}
+#menu_sidebar #sidebar_subtitle{
+    padding: 0;
+    margin: 0;
+
+    font-family: Futura-Pt_Heavy;
+    font-size: 25px;
+}
+#menu_sidebar p a{
+    font-family: Futura-Pt_Light;
+    font-size: 25px;
+
+    color: black;
+
+    text-decoration: none;
+}
+#menu_sidebar p .menu_sidebar_smaller{
+    font-family: Futura-Pt_Light;
+    font-size: 19px;
+    margin-left: 20px;
+}
+
+#menu_content{
+    grid-area: menu_content;
+}
+
+#menu_empty{
+    grid-area: empty;
+}
+
+.menu_sectionIsVisible{
+    font-family: Futura-Pt_Medium!important;
+    color: var(--ta-pies_red)!important;
+}
+
+.menu_subtitle2, .menu_subtitle2_bold{
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar_quicklinks p a{
+    cursor: pointer;
+}
+.menu_subtext{
+    padding: 0;
+    margin: 0;
+
+    margin-bottom: 30px;
+}
+
+/* Menu Grid */
+.menu_grid{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.menu_food_item img{
+    width: 100%;
+    height: 250px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.menu_food_item_name, .menu_subtitle2{
+    margin-top: 10px;
+    font-family: Futura-Pt_Medium;
+    font-size: 30px;
+}
+
+.menu_subtitle2_bold{
+    margin-top: 47px;
+    font-family: Futura-Pt_Heavy;
+    font-size: 30px;
+    color: var(--ta-pies_red);
+}
+
+.menu_food_item_allergy_icons{
+    height: 30px;
+}
+
+.menu_food_item_description, .menu_subtext{
+    font-family: Futura-Pt_Book;
+    font-size: 21px;
+}
+
+.menu_food_item_price{
+    margin-top: 6px;
+    margin-bottom: 30px;
+
+    font-family: Futura-Pt_Medium;
+    font-size: 21px;
+}
+.allergie_icons{
+    display: grid;
+    grid-template-columns: repeat(7, 38px);
+    grid-template-areas:
+        "sidebar menu_content" 
+        ;
+}
+.allergie_icons img{
+    height: 30px;
+    width: auto;
+}
+
+/* Menu Page - Responsiveness */
+@media screen and (max-width: 1500px) {
+    #menu_outer{
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "sidebar menu_content" 
+            ;
+    }
+}
+@media screen and (max-width: 1200px) {
+    #menu_outer{
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "sidebar menu_content" 
+            ;
+    }
+
+    .menu_grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 770px) {
+    #menu_outer{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "empty" 
+            "sidebar" 
+            "menu_content" 
+            ;
+    }
+
+    .menu_grid{
+        grid-template-columns: 1fr;
+    }
+
+    #menu_sidebar_outer{
+        position: fixed;
+        width: auto;
+        top: 81px;
+        left:0%;        
+        background-color: var(--bs-light-bg);
+    }
+    #menu_sidebar{
+        border-bottom: 4px solid rgb(51, 51, 51);
+        
+        padding-top: 5px;
+    }
+
+    #menu_sidebar::-webkit-scrollbar{
+        display: none;    
+    }
+    #menu_sidebar p{
+        text-align: center;
+        display: inline-block;
+    }
+
+    #menu_sidebar p a{
+        position: relative;
+        align-items: center;
+        
+        float: left;
+        padding: 0 15px;
+
+        border-left: 2px solid gray;
+    }
+    #menu_sidebar p #menu_sidebar_HotPies{
+        border-left: 0;
+    }
+
+    .menu_sidebar_smaller{
+        margin: 0!important;
+    }
+
+    #menu_sidebar #sidebar_subtitle{
+        position: relative;
+        align-items: center;
+        display: block;
+
+        margin-bottom: 5px;
+
+        border-bottom: 4px solid rgb(51, 51, 51);
+    }
+
+    #menu_sidebar #sidebar_quicklinks{
+        width: 100vw;
+        
+        overflow: auto;
+        white-space:nowrap;
+    }
+
+    .main_extra_space{
+        height: 148px;
+    }
+}
+
+/***** About Us Page *****/
+#about_us_container{
+    display: grid;
+    height: auto;
+
+    column-gap: 30px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+        "text_ourStory picture_ourStory" 
+        ;
+}
+
+#about_us_text{
+    grid-area: text_ourStory;
+}
+
+#about_us_pic img{
+    grid-area: picture_ourStory;
+    width: 100%;
+    height: 77vh;
+
+    position: sticky;
+
+    align-items: center;
+
+    object-fit: cover;
+
+    top: 148px;
+    bottom: 0;
+}
+
+/* About Us Page - Responsiveness */
+@media screen and (max-width: 1500px) {
+    #about_us_container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "picture_ourStory" 
+            "text_ourStory" 
+            ;
+    }
+    #about_us_pic img{
+        grid-area: picture_ourStory;
+
+        width: 100%;
+        height: auto;
+    
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+}
+
+/***** Contact Us Page *****/
+#contact_us_main .heading_2, #contact_us_main .heading_3{
+    text-align: center;
+}
+
+#contact_form{
+    margin-top: 40px;
+}
+
+/* Adjusting the bloat of forms */
+#contact_form label{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#contact_form div input, #contact_form div textarea{
+    width: 100%;
+}
+
+#contact_form div #btn_submit, #contact_form div #btn_clear{
+    width: auto;
+}
+
+/* Contact Form Grid */
+#contact_form{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    column-gap: 30px;
+    row-gap: 20px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "firstname lastname"
+        "contactnumber empty"
+        "subject empty"
+        "message message"
+        "form_buttons form_buttons"
+        ;
+}
+
+/* Form Empty Space */
+#form_emptySpace{
+    grid-area: empty;
+    width: 100%;
+    height: 100%;
+}
+
+/* Form Labels and Text Fields */
+#form_first_name_outer{
+    grid-area: firstname;
+}
+#form_first_name_outer p{
+    grid-area: lbl_firstname;
+}
+#form_first_name_outer input{
+    grid-area: txt_firstname;
+}
+
+#form_last_name_outer{
+    grid-area: lastname;
+}
+#form_last_name_outer p{
+    grid-area: txt_firstname;
+}
+#form_last_name_outer input{
+    grid-area: lbl_firstname;
+}
+
+#form_contact_number_outer{
+    grid-area: contactnumber;
+}
+
+#form_subject_outer{
+    grid-area: subject;
+}
+
+#form_message_outer{
+    grid-area: message;
+}
+
+/* Form Buttons */
+#form_buttons_outer{
+    grid-area: form_buttons;
+    text-align: center;
+}
+
+#form_buttons_outer .button_common{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Contact Form - Responsiveness */
+@media screen and (max-width: 1260px) {
+    #contact_form{
+        
+        width: 100%;
+        column-gap: 0px;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "firstname"
+            "lastname"
+            "contactnumber"
+            "subject"
+            "message"
+            "form_buttons"
+            ;
+    }
+
+    #form_first_name_outer{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    #form_last_name_outer{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    #form_contact_number_outer{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    #form_subject_outer{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    #form_message_outer{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #form_buttons_outer #buttons_common{
+        padding: 0;
+        margin: 0;
+    }
+
+    #form_buttons_outer #btn_clear{
+        margin-top: 20px;
+    }
+}
+
+/* Establishment Details */
+#establishment_container{
+    display: grid;
+    height: auto;
+
+    column-gap: 30px;
+
+    grid-template-columns: auto 1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+        "text_establishment map_establishment" 
+        ;
+}
+
+#establishment_text{
+    grid-area: text_establishment;
+    padding-right: 30px;
+}
+
+#establishment_text .heading_2, #establishment_text .heading_3{
+    text-align: left;
+}
+
+#establishment_text{
+    padding-top: 30px;
+}
+
+#establishment_details_opening-hours{
+    display: grid;
+    column-gap: 30px;
+
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "establishment_day_1 establishment_time_1"
+        "establishment_day_2 establishment_time_2"
+        "establishment_day_3 establishment_time_3"
+        "establishment_day_4 establishment_time_4"
+        ;
+}
+#establishment_details_opening-hours #establishment_day_1{
+    grid-area: establishment_day_1;
+}
+#establishment_details_opening-hours #establishment_time_1{
+    grid-area: establishment_time_1;
+}
+#establishment_details_opening-hours #establishment_day_2{
+    grid-area: establishment_day_2;
+}
+#establishment_details_opening-hours #establishment_time_2{
+    grid-area: establishment_time_2;
+}
+#establishment_details_opening-hours #establishment_day_3{
+    grid-area: establishment_day_3;
+}
+#establishment_details_opening-hours #establishment_time_3{
+    grid-area:establishment_time_3;
+}
+#establishment_details_opening-hours #establishment_day_4{
+    grid-area: establishment_day_4;
+}
+#establishment_details_opening-hours #establishment_time_4{
+    grid-area: establishment_time_4;
+}
+
+/* Establishment Map */
+#establishment_map iframe{
+    grid-area: map_establishment;
+    width: 100%;
+    height: 100%;
+}
+
+/* Establishment typeography */
+#establishment_text .heading_3{
+    padding-top: 15px;
+}
+
+#establishment_text #establishment_address{
+    padding-top: 0px;
+}
+
+.establishment_date{
+    font-family: Futura-Pt_Medium!important;
+}
+
+/* Establishment Details + Map Area - Responsiveness */
+@media screen and (max-width: 1025px) {
+    #establishment_container{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "text_establishment" 
+            "map_establishment" 
+            ;
+    }
+    
+    #establishment_details_opening-hours{
+        display: grid;
+        column-gap: 30px;
+
+        grid-template-columns: 270px auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "establishment_day_1 establishment_time_1"
+            "establishment_day_2 establishment_time_2"
+            "establishment_day_3 establishment_time_3"
+            "establishment_day_4 establishment_time_4"
+            ;
+    }
+
+    #establishment_text{
+        grid-area: text_establishment;
+        padding: 0;
+        padding-bottom: 30px;
+    }
+    #establishment_map iframe{
+        width: 100%;
+        height: 500px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #establishment_details_opening-hours{    
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "establishment_day_1"
+            "establishment_time_1"
+            "establishment_day_2"
+            "establishment_time_2"
+            "establishment_day_3"
+            "establishment_time_3"
+            "establishment_day_4"
+            "establishment_time_4"
+            ;
+    }
+
+    .establishment_time{
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+
+    #time_4{
+        margin-bottom: 0;
+    }
+}
+
+/* FAQ Section */
+/* Typography for Hyperlinks within text */
+.faq_panel a{
+    text-decoration: none;
+    color: black;
+    font-family: Futura-Pt_Medium;
+}
+
+/* Extra space between allergies' sentences */
+.faq_extraSpace{
+    height: 10px;
+}
+
+/* FAQ Grid */
+#accordion_outer{
+    display: grid;
+    row-gap: 10px;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/* FAQ Main */
+#accordion_main{
+    width: auto;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+/* FAQ Accordion - Question */
+.faq_accordion{
+    width: 100%;
+    
+    cursor: pointer;
+
+    display: grid;
+    column-gap: 10px;
+
+    grid-template-columns: 1fr 30px;
+    grid-template-areas:
+        "acc_question acc_img"
+        ;
+
+    text-align: left!important;
+}
+
+.faq_accordion .faq_icon{
+    grid-area: acc_img;
+}d
+
+.faq_accordion .faq_question{
+    grid-area: acc_img;
+}
+
+.faq_accordion .faq_question a{
+    color: black;
+    text-decoration: none;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The dummy accordion was only made since it was lagging when loading the icon image for the first time
+*  Position absolute, fixed, or display none did not work since the lag was still occuring.
+*/
+#dummy_accordion{
+    height: 0;
+    opacity: 0.001;
+}
+
+/* FAQ Accordion - Icon */
+.faq_accordion .faq_icon{
+    margin-top: 8px;
+    width: 30px;
+    height: 30px;
+    background: url(../assets/images/faq_accordian/faq_btn_default.png) no-repeat;
+    background-size: contain!important;
+    transition: all .2s ease-out;
+
+    border-radius: 100%;
+}
+
+.faq_icon_active{
+    background: url(../assets/images/faq_accordian/faq_btn_opened.png) no-repeat!important;
+}
+
+/* Panel - Answer */
+.faq_panel{
+    overflow: hidden;
+    max-height: 0;
+    margin-left: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    
+    border-bottom:3px solid black;
+
+    transition: all .2s ease-out;
+}
+
+/***** Reviews Page *****/
+.video-container {
+    /* Original 16:9 */
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* Reviews Typography*/
+.reviews_text{
+    grid-area: reviews_text;
+}
+.review_style_1 .reviews_text .review_text_quote, .review_style_1 .reviews_text .reviews_text_reviewer{
+    text-align: right;
+}
+
+.review_text_quote{
+    font-family: Futura-Pt_Medium_Oblique;
+    font-size: 35px;
+}
+.reviews_text_reviewer{
+    text-transform: uppercase;
+    font-family: Futura-Pt_Cond_Bold;
+    font-size: 40px;
+    color: var(--ta-pies_red);
+}
+
+/* Reviews Grid / Positioning*/
+.review{
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    border-bottom:3px solid black;
+    align-items: center;
+
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review_style_1{
+    display: grid;
+    height: auto;
+
+    column-gap: 60px;
+
+    grid-template-columns: 520px 1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+        "reviews_image reviews_text" 
+        ;
+}
+
+.review_style_2{
+    display: grid;
+    height: auto;
+
+    column-gap: 60px;
+
+    grid-template-columns: 1fr 520px;
+    grid-template-rows:auto;
+    grid-template-areas:
+        "reviews_text reviews_image" 
+        ;
+}
+
+.reviews_image{
+    grid-area: reviews_image;
+}
+.reviews_image img{
+    width: 100%;
+}
+
+/* Reviews Responsiveness */
+@media screen and (max-width: 1600px) {
+    .review_style_1, .review_style_2{    
+        column-gap: 0px;
+        row-gap: 30px;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "reviews_image" 
+            "reviews_text" 
+            ;
+    }
+    .review_text_quote{
+        text-align: left!important;
+    }
+
+    .reviews_text_reviewer{
+        text-align: right!important;
+    }
+
+    .reviews_image img{
+        max-width: 400px;
+        width: auto;
+    }
+    .reviews_image{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+}
